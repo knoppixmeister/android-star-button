@@ -40,11 +40,11 @@ public class StarButton extends ImageView {
 		super(context);
 	}
 
-	public void setOnStateChange(OnStateChangeListener l) {
+	public void setOnStateChangeListener(OnStateChangeListener l) {
 		this.stateChanegListener = l;
 	}
 
-	public interface OnStateChangeListener {
+	public static interface OnStateChangeListener {
 		public void onStateChanged(StarButton button, boolean isActiveState);
 	}
 }
