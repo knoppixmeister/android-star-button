@@ -32,7 +32,7 @@ public class StarButton extends ImageView {
 
 				starButtonActiveState = !starButtonActiveState;
 
-				if(stateChanegListener != null) {
+				if(stateChanegListener != null && stateChanegListener instanceof OnStateChangeListener) {
 					stateChanegListener.onStateChanged(starButton, starButtonActiveState);
 				}
 			}
