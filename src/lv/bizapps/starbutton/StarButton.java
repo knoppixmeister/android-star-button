@@ -7,9 +7,9 @@ import android.widget.ImageView;
 
 public class StarButton extends ImageView {
 	protected boolean starButtonActiveState = false;
-	
+
 	protected StarButton starButton;
-	protected OnStateChangeListener stateChanegListener;
+	protected OnStateChangeListener stateChangeListener;
 
 	public StarButton(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
@@ -32,8 +32,8 @@ public class StarButton extends ImageView {
 
 				starButtonActiveState = !starButtonActiveState;
 
-				if(stateChanegListener != null && stateChanegListener instanceof OnStateChangeListener) {
-					stateChanegListener.onStateChanged(starButton, starButtonActiveState);
+				if(stateChangeListener != null && stateChangeListener instanceof OnStateChangeListener) {
+					stateChangeListener.onStateChanged(starButton, starButtonActiveState);
 				}
 			}
 		});
@@ -48,7 +48,7 @@ public class StarButton extends ImageView {
 	}
 
 	public void setOnStateChangeListener(OnStateChangeListener l) {
-		this.stateChanegListener = l;
+		this.stateChangeListener = l;
 	}
 
 	public static interface OnStateChangeListener {
